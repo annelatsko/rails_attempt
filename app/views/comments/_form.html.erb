@@ -1,0 +1,14 @@
+<h3>Post a Shitty Comment, shitlord.</h3>
+<%= form_for [ @article, @comment ] do |f| %>
+<p>
+	<%= f.label :author_name, "Your shitty-ass name" %><br />
+	<%= f.text_field :author_name %>
+</p>
+<p>
+	<%= f.label :body, "Your shitty-ass comment" %><br />
+	<%= f.text_area :body %>
+</p>
+<p>
+	<%= f.submit 'troll the comments' %> 
+</p>
+<% end %>
