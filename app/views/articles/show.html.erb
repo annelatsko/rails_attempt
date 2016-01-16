@@ -13,8 +13,11 @@
 </p>
 <p><%= @article.body %></p>
 <h3>Comments (<%= @article.comments.size %>)</h3>
+
 <%=render partial: 'articles/comment', collection: @article.comments %>
 <%= render partial: 'comments/form' %>
-<%= link_to "<< Back to List of Shitposts", articles_path %>
-<%= link_to "<< Delete this Shitpost", article_path(@article), method: :delete, data: {confirm: "Really delete the shitpost?"}%>
-<%= link_to "edit the shitpost", edit_article_path(@article) %>
+<% if logged_in? %>
+	<%= link_to "<< Back to List of Shitposts", articles_path %>
+	<%= link_to "<< Delete this Shitpost", article_path(@article), method: :delete, data: {confirm: "Really delete the shitpost?"}%>
+	<%= link_to "edit the shitpost", edit_article_path(@article) %>
+<% end %>
